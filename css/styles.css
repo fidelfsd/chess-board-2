@@ -1,0 +1,47 @@
+:root {
+    --ancho-tablero: 220px;
+    --dark-color: rgb(220, 146, 146);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    width: var(--ancho-tablero);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+.casilla {
+    width: calc(var(--ancho-tablero)/8);
+    height: calc(var(--ancho-tablero)/8);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(var(--ancho-tablero)/10);
+}
+
+.casilla:nth-child(2n):nth-child(-n+8),
+.casilla:nth-child(2n+9):nth-child(-n+16),
+.casilla:nth-child(2n+18):nth-child(-n+24),
+.casilla:nth-child(2n+25):nth-child(-n+32),
+.casilla:nth-child(2n+34):nth-child(-n+40),
+.casilla:nth-child(2n+41):nth-child(-n+48),
+.casilla:nth-child(2n+50):nth-child(-n+56),
+.casilla:nth-child(2n+57):nth-child(-n+64) {
+    background-color: var(--dark-color);
+}
